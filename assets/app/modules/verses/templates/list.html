@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <a ui-sref='verses.new'>Compor um novo verso</a>
+    </div>
+
+    <div class="row">
+        <div data-ng-if='! verses.length '>
+            <span> Que pena... não encontramos nenhum verso! Que tal <a ui-sref='verses.new'> compor um novo verso</a> ?</span>
+        </div>
+        <ul>
+            <li ng-repeat='verse in verses'>
+                <a ui-sref="verse.edit({id: $index})">{{verse.text}}</a>
+            </li>
+        </ul>
+    </div>
+</div>

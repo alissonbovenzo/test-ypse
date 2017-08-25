@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <a ui-sref='users.new'>Criar novo usuário</a>
+    </div>
+
+    <div class="row">
+        <div data-ng-if='! users.length '>
+            <span> Parece que você ainda não possui usuários, gostaria de <a ui-sref='users.new'> criar um novo usuário</a> ?</span>
+        </div>
+        <ul>
+            <li ng-repeat='user in users'>
+                <a ui-sref="users.edit({id: $index})">{{user.name}}</a>
+            </li>
+        </ul>
+    </div>
+</div>
