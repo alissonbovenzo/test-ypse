@@ -4,13 +4,13 @@
     </div>
 
     <div class="row">
-        <div data-ng-if='! verses.length '>
+        <div data-ng-if='!verses.length '>
             <span> Que pena... não encontramos nenhum verso! Que tal <a ui-sref='verses.new'> compor um novo verso</a> ?</span>
         </div>
         <ul>
             <li ng-repeat='verse in verses'>
-                <a ui-sref="verse.edit({id: $index})">{{verse.text}}</a>
-            </li>
+                <a ui-sref="verses.edit({id: $index})">{{verse.text}}</a>  - Postado por : <a href="mailto:{{users[verse.user].email}}">{{users[verse.user].name}} - <span data-ng-bind="verse.timestamp | date : 'dd/MM/yyyy HH:mm'"></span></a>
+             </li>
         </ul>
     </div>
 </div>
